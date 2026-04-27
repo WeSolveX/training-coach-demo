@@ -1,21 +1,42 @@
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Star } from "lucide-react";
 
 export default function Hero() {
   return (
     <section className="relative overflow-hidden bg-[var(--color-bone)]">
-      <div className="max-w-[1400px] mx-auto px-5 sm:px-8 lg:px-12 pt-16 pb-20 md:pt-24 md:pb-28">
+      <div className="max-w-[1400px] mx-auto px-5 sm:px-8 lg:px-12 pt-14 pb-20 md:pt-20 md:pb-28">
         <div className="grid gap-12 lg:grid-cols-12 lg:items-end">
           <div className="lg:col-span-7">
-            <div className="eyebrow">For kvinder 30+ der træner</div>
-            <h1 className="mt-6 font-display text-[clamp(3.2rem,8vw,7rem)] text-[var(--color-ink)]">
+            <div className="inline-flex items-center gap-2 text-xs uppercase tracking-widest text-[var(--color-ink-mute)]">
+              <Star className="w-3 h-3 fill-[var(--color-rust)] text-[var(--color-rust)]" />
+              For kvinder 30+ der træner
+            </div>
+            <h1 className="mt-6 font-display text-[clamp(3.4rem,9vw,8.5rem)] text-[var(--color-ink)] leading-[0.9]">
               Stærk krop.
               <br />
               <span className="font-display-italic text-[var(--color-rust)]">Klart hoved.</span>
               <br />
-              Ingen bullshit.
+              <span className="inline-flex items-baseline gap-3">
+                Ingen
+                <span className="relative">
+                  bullshit.
+                  <svg
+                    aria-hidden
+                    viewBox="0 0 240 12"
+                    className="absolute left-0 right-0 -bottom-2 w-full"
+                  >
+                    <path
+                      d="M2 8 C 60 2, 120 12, 238 4"
+                      stroke="var(--color-rust)"
+                      strokeWidth="3"
+                      fill="none"
+                      strokeLinecap="round"
+                    />
+                  </svg>
+                </span>
+              </span>
             </h1>
-            <p className="mt-8 text-lg md:text-xl text-[var(--color-ink-soft)] max-w-xl leading-snug">
+            <p className="mt-10 text-lg md:text-xl text-[var(--color-ink-soft)] max-w-xl leading-snug">
               Du træner 3–4 gange om ugen. Så hvorfor kan du ikke se det? Det er ikke din indsats der er problemet — det er måden du gør det på.
             </p>
             <div className="mt-10 flex flex-wrap gap-3">
@@ -38,7 +59,7 @@ export default function Hero() {
                 className="w-full h-full object-cover grayscale-[15%]"
                 loading="eager"
               />
-              <div className="absolute inset-x-0 bottom-0 p-6 bg-gradient-to-t from-[var(--color-ink)]/70 via-[var(--color-ink)]/20 to-transparent">
+              <div className="absolute inset-x-0 bottom-0 p-6 bg-gradient-to-t from-[var(--color-ink)]/75 via-[var(--color-ink)]/15 to-transparent">
                 <p className="font-display-italic text-2xl text-[var(--color-bone)]">
                   &ldquo;Tunge vægte former kroppen.&rdquo;
                 </p>
