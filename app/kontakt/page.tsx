@@ -25,7 +25,7 @@ export default function KontaktPage() {
 
           <aside className="space-y-5">
             <a
-              href="mailto:hej@monikapowers.com"
+              href="mailto:testtest@..."
               className="block rounded-3xl border border-[var(--color-bone-deep)] bg-[var(--color-bone-soft)] p-7 hover:border-[var(--color-rust)] transition-colors"
             >
               <Mail className="w-5 h-5 text-[var(--color-rust)]" />
@@ -33,7 +33,7 @@ export default function KontaktPage() {
                 Email
               </p>
               <p className="mt-1 font-display text-xl text-[var(--color-ink)]">
-                hej@monikapowers.com
+                testtest@...
               </p>
             </a>
 

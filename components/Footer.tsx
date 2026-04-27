@@ -42,8 +42,8 @@ export default function Footer() {
             <div className="eyebrow text-[var(--color-bone)]/55">Kontakt</div>
             <ul className="mt-5 space-y-3 text-sm">
               <li>
-                <a href="mailto:hej@monikapowers.com" className="hover:text-[var(--color-rust-soft)]">
-                  hej@monikapowers.com
+                <a href="mailto:testtest@..." className="hover:text-[var(--color-rust-soft)]">
+                  testtest@...
                 </a>
               </li>
               <li>CVR: 39827905</li>
