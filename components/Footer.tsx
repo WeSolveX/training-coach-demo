@@ -1,43 +1,59 @@
 import Link from "next/link";
+import { Instagram, ArrowUpRight } from "lucide-react";
 
 export default function Footer() {
   const year = new Date().getFullYear();
   return (
-    <footer className="border-t border-stone-200 bg-stone-100">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 grid gap-8 md:grid-cols-3 text-sm text-stone-600">
-        <div>
-          <div className="font-display text-xl text-stone-900">
-            Heavy <span className="text-amber-700">&amp;</span> Kind
-          </div>
-          <p className="mt-3 max-w-xs">
-            Strength training for women who want to lift heavy and be treated
-            kindly.
-          </p>
-        </div>
-
-        <div>
-          <div className="font-medium text-stone-900 mb-3">Site</div>
-          <ul className="space-y-2">
-            <li><Link href="/plans" className="hover:text-amber-700">Plans</Link></li>
-            <li><Link href="/coach" className="hover:text-amber-700">Structure Coach</Link></li>
-            <li><Link href="/about" className="hover:text-amber-700">About</Link></li>
-            <li><Link href="/contact" className="hover:text-amber-700">Contact</Link></li>
-          </ul>
-        </div>
-
-        <div>
-          <div className="font-medium text-stone-900 mb-3">Get in touch</div>
-          <p>
+    <footer className="bg-[var(--color-ink)] text-[var(--color-bone)]">
+      <div className="max-w-[1400px] mx-auto px-5 sm:px-8 lg:px-12 py-20">
+        <div className="grid gap-16 md:grid-cols-12">
+          <div className="md:col-span-6">
+            <div className="flex items-baseline gap-1.5">
+              <span className="font-display text-4xl">monika</span>
+              <span className="font-display-italic text-4xl text-[var(--color-rust-soft)]">powers</span>
+            </div>
+            <p className="mt-6 max-w-md text-lg leading-snug text-[var(--color-bone)]/75">
+              Stærk krop, klart hoved, ingen bullshit. Til kvinder 30+ der træner — men ikke kan se forskel endnu.
+            </p>
             <a
-              href="mailto:hello@heavyandkind.example"
-              className="hover:text-amber-700"
+              href="https://instagram.com/monika_sattler_"
+              target="_blank"
+              rel="noreferrer"
+              className="mt-8 inline-flex items-center gap-2 text-sm font-medium text-[var(--color-bone)] hover:text-[var(--color-rust-soft)] transition-colors"
             >
-              hello@heavyandkind.example
+              <Instagram className="w-4 h-4" />
+              @monika_sattler_
+              <ArrowUpRight className="w-3.5 h-3.5" />
             </a>
-          </p>
-          <p className="mt-6 text-xs text-stone-500">
-            &copy; {year} Heavy &amp; Kind. Demo site.
-          </p>
+          </div>
+
+          <div className="md:col-span-3">
+            <div className="eyebrow text-[var(--color-bone)]/55">Sider</div>
+            <ul className="mt-5 space-y-3 text-sm">
+              <li><Link href="/" className="hover:text-[var(--color-rust-soft)]">Forside</Link></li>
+              <li><Link href="/programmet" className="hover:text-[var(--color-rust-soft)]">Stærk &amp; Struktureret</Link></li>
+              <li><Link href="/filosofi" className="hover:text-[var(--color-rust-soft)]">Filosofi</Link></li>
+              <li><Link href="/om" className="hover:text-[var(--color-rust-soft)]">Om Monika</Link></li>
+              <li><Link href="/kontakt" className="hover:text-[var(--color-rust-soft)]">Kontakt</Link></li>
+            </ul>
+          </div>
+
+          <div className="md:col-span-3">
+            <div className="eyebrow text-[var(--color-bone)]/55">Kontakt</div>
+            <ul className="mt-5 space-y-3 text-sm">
+              <li>
+                <a href="mailto:hej@monikapowers.com" className="hover:text-[var(--color-rust-soft)]">
+                  hej@monikapowers.com
+                </a>
+              </li>
+              <li>CVR: 39827905</li>
+            </ul>
+          </div>
+        </div>
+
+        <div className="mt-20 pt-8 border-t border-[var(--color-bone)]/15 flex flex-col sm:flex-row justify-between gap-4 text-xs text-[var(--color-bone)]/55">
+          <p>© {year} Monika Sattler · Alle rettigheder forbeholdes</p>
+          <p>Engangsbetaling · Ingen abonnement · Adgang med det samme</p>
         </div>
       </div>
     </footer>

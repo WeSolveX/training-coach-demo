@@ -13,14 +13,22 @@ const inter = Inter({
 const fraunces = Fraunces({
   variable: "--font-fraunces",
   subsets: ["latin"],
-  weight: ["700"],
+  weight: ["400", "700"],
+  style: ["normal", "italic"],
   display: "swap",
 });
 
 export const metadata: Metadata = {
-  title: "Heavy & Kind — Strength training for women",
+  title: "Monika Powers — Stærk krop, klart hoved, ingen bullshit",
   description:
-    "Strength training for women who want to lift heavy and be treated kindly. Three plans. Real loading. A coach who picks up the phone.",
+    "Styrketræning og struktur for kvinder 30+ der træner — men ikke kan se forskel endnu. Et 12-ugers system der virker i en travl hverdag.",
+  openGraph: {
+    title: "Monika Powers — Stærk krop, klart hoved, ingen bullshit",
+    description:
+      "Du mangler ikke motivation. Du mangler et system. Stærk & Struktureret — 12 ugers styrketræning bygget til kvinder 30+.",
+    type: "website",
+    locale: "da_DK",
+  },
 };
 
 export default function RootLayout({
@@ -30,10 +38,10 @@ export default function RootLayout({
 }>) {
   return (
     <html
-      lang="en"
+      lang="da"
       className={`${inter.variable} ${fraunces.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col bg-stone-100 text-stone-900">
+      <body className="min-h-full flex flex-col">
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />

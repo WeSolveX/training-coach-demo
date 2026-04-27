@@ -4,25 +4,42 @@ import { ArrowRight } from "lucide-react";
 export default function CTABanner({
   title,
   body,
-  ctaLabel = "Start the conversation",
-  ctaHref = "/contact",
+  ctaLabel = "Kom i gang",
+  ctaHref = "/programmet",
+  variant = "ink",
 }: {
   title: string;
   body: string;
   ctaLabel?: string;
   ctaHref?: string;
+  variant?: "ink" | "rust";
 }) {
+  const isRust = variant === "rust";
   return (
-    <section className="bg-stone-900 text-stone-100">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-24 grid gap-8 md:grid-cols-2 md:items-center">
-        <div>
-          <h2 className="font-display text-4xl md:text-5xl">{title}</h2>
-          <p className="mt-4 text-stone-300 max-w-xl">{body}</p>
+    <section
+      className={
+        isRust
+          ? "bg-[var(--color-rust)] text-[var(--color-bone)]"
+          : "bg-[var(--color-ink)] text-[var(--color-bone)]"
+      }
+    >
+      <div className="max-w-[1400px] mx-auto px-5 sm:px-8 lg:px-12 py-24 md:py-32 grid gap-10 md:grid-cols-12 md:items-end">
+        <div className="md:col-span-8">
+          <h2 className="font-display text-[clamp(2.5rem,6vw,5rem)] leading-[0.95]">
+            {title}
+          </h2>
+          <p className="mt-6 text-lg text-[var(--color-bone)]/80 max-w-2xl">
+            {body}
+          </p>
         </div>
-        <div className="md:justify-self-end">
+        <div className="md:col-span-4 md:justify-self-end">
           <Link
             href={ctaHref}
-            className="inline-flex items-center gap-2 rounded-full bg-amber-700 text-stone-100 px-6 py-3 text-sm font-medium hover:bg-amber-600 transition-colors"
+            className={
+              isRust
+                ? "inline-flex items-center gap-2 rounded-full bg-[var(--color-ink)] text-[var(--color-bone)] px-7 py-4 text-sm font-medium hover:bg-[var(--color-bone)] hover:text-[var(--color-ink)] transition-colors"
+                : "inline-flex items-center gap-2 rounded-full bg-[var(--color-rust)] text-[var(--color-bone)] px-7 py-4 text-sm font-medium hover:bg-[var(--color-bone)] hover:text-[var(--color-ink)] transition-colors"
+            }
           >
             {ctaLabel}
             <ArrowRight className="w-4 h-4" />

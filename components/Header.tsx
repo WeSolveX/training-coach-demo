@@ -5,42 +5,49 @@ import { useState } from "react";
 import { Menu, X } from "lucide-react";
 
 const nav = [
-  { href: "/plans", label: "Plans" },
-  { href: "/coach", label: "Structure Coach" },
-  { href: "/about", label: "About" },
-  { href: "/contact", label: "Contact" },
+  { href: "/programmet", label: "Programmet" },
+  { href: "/filosofi", label: "Filosofi" },
+  { href: "/om", label: "Om Monika" },
+  { href: "/kontakt", label: "Kontakt" },
 ];
 
 export default function Header() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="border-b border-stone-200 bg-stone-100/80 backdrop-blur sticky top-0 z-50">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
+    <header className="border-b border-[var(--color-bone-deep)] bg-[var(--color-bone)]/85 backdrop-blur sticky top-0 z-50">
+      <div className="max-w-[1400px] mx-auto px-5 sm:px-8 lg:px-12 flex items-center justify-between h-20">
         <Link
           href="/"
-          className="font-display text-2xl tracking-tight text-stone-900"
+          className="flex items-baseline gap-1 text-[var(--color-ink)]"
           onClick={() => setOpen(false)}
         >
-          Heavy <span className="text-amber-700">&amp;</span> Kind
+          <span className="font-display text-2xl tracking-tight">monika</span>
+          <span className="font-display-italic text-2xl text-[var(--color-rust)]">powers</span>
         </Link>
 
-        <nav className="hidden md:flex items-center gap-8 text-sm font-medium text-stone-700">
+        <nav className="hidden md:flex items-center gap-10 text-sm font-medium text-[var(--color-ink-soft)]">
           {nav.map((item) => (
             <Link
               key={item.href}
               href={item.href}
-              className="hover:text-amber-700 transition-colors"
+              className="hover:text-[var(--color-rust)] transition-colors"
             >
               {item.label}
             </Link>
           ))}
         </nav>
 
+        <div className="hidden md:block">
+          <Link href="/programmet" className="btn-primary text-xs">
+            Køb programmet
+          </Link>
+        </div>
+
         <button
-          aria-label={open ? "Close menu" : "Open menu"}
+          aria-label={open ? "Luk menu" : "Åbn menu"}
           aria-expanded={open}
-          className="md:hidden p-2 -mr-2 text-stone-900"
+          className="md:hidden p-2 -mr-2 text-[var(--color-ink)]"
           onClick={() => setOpen((v) => !v)}
         >
           {open ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -48,18 +55,25 @@ export default function Header() {
       </div>
 
       {open && (
-        <nav className="md:hidden border-t border-stone-200 bg-stone-100">
-          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex flex-col gap-3 text-base font-medium text-stone-700">
+        <nav className="md:hidden border-t border-[var(--color-bone-deep)] bg-[var(--color-bone)]">
+          <div className="max-w-[1400px] mx-auto px-5 sm:px-8 py-6 flex flex-col gap-4 text-base font-medium text-[var(--color-ink-soft)]">
             {nav.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
                 onClick={() => setOpen(false)}
-                className="py-2 hover:text-amber-700 transition-colors"
+                className="py-2 hover:text-[var(--color-rust)] transition-colors"
               >
                 {item.label}
               </Link>
             ))}
+            <Link
+              href="/programmet"
+              onClick={() => setOpen(false)}
+              className="btn-primary mt-2 self-start"
+            >
+              Køb programmet
+            </Link>
           </div>
         </nav>
       )}

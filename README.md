@@ -1,17 +1,22 @@
-# Heavy & Kind — Training Coach Demo
+# Monika Powers — Stærk & Struktureret
 
-A demo marketing site for **Heavy & Kind**, a fictional women's strength
-coaching brand. Built with Next.js 15 App Router, Tailwind v4, and deployed
-to Railway.
+Hjemmeside for Monika Powers. Styrketræning og struktur for kvinder 30+.
+Bygget med Next.js 15 App Router, Tailwind v4 og deployet til Railway.
 
 ## Stack
 - Next.js 15 (App Router) + TypeScript
 - Tailwind CSS v4
 - `lucide-react` icons
-- Inter + Fraunces 700 via `next/font/google`
-- Plain `<img>` tags with Unsplash URLs
+- Inter + Fraunces (display) via `next/font/google`
 
-## Local development
+## Sider
+- `/` — Forside (hero, problem-recognition, realitetstjek, produkt-feature, om-preview, CTA)
+- `/programmet` — Stærk & Struktureret produktside (12 ugers system, moduler, FAQ)
+- `/filosofi` — Min tilgang til træning og ernæring
+- `/om` — Om Monika
+- `/kontakt` — Kontaktformular og direkte kanaler
+
+## Lokal udvikling
 ```
 npm install
 npm run dev
@@ -24,12 +29,11 @@ npm run start
 ```
 
 ## Deploy
-Railway picks this up via Nixpacks. Node version is pinned to 20.x via
-`engines` in `package.json`.
+Railway picker projektet op via Nixpacks. Node-version er pinned til 20.x via `engines` i `package.json`.
 
-## Pages
-- `/` — Home
-- `/plans` — Beginner Power, Intermediate Strength, Advanced Power
-- `/coach` — What a structure coach is
-- `/about` — Coach Maria + philosophy
-- `/contact` — Demo contact form
+## Brand
+- Bone (`#f4efe8`) baggrund
+- Ink (`#14110f`) tekst
+- Rust (`#c44a2c`) accent / CTA
+- Display: Fraunces (700 + italic) — bruges til store overskrifter
+- Body: Inter
