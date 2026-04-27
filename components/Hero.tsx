@@ -6,24 +6,25 @@ export default function Hero() {
     <section className="relative overflow-hidden bg-[var(--color-bone)]">
       <div className="max-w-[1400px] mx-auto px-5 sm:px-8 lg:px-12 pt-14 pb-20 md:pt-20 md:pb-28">
         <div className="grid gap-12 lg:grid-cols-12 lg:items-end">
-          <div className="lg:col-span-7">
+          <div className="lg:col-span-7 min-w-0">
             <div className="inline-flex items-center gap-2 text-xs uppercase tracking-widest text-[var(--color-ink-mute)]">
               <Star className="w-3 h-3 fill-[var(--color-rust)] text-[var(--color-rust)]" />
               For kvinder 30+ der træner
             </div>
-            <h1 className="mt-6 font-display text-[clamp(3.4rem,9vw,8.5rem)] text-[var(--color-ink)] leading-[0.9]">
+            <h1 className="mt-6 font-display text-[clamp(2.8rem,7vw,6rem)] text-[var(--color-ink)] leading-[0.95] break-words">
               Stærk krop.
               <br />
               <span className="font-display-italic text-[var(--color-rust)]">Klart hoved.</span>
               <br />
-              <span className="inline-flex items-baseline gap-3">
+              <span className="inline-flex items-baseline gap-[0.25em] max-w-full">
                 Ingen
-                <span className="relative">
+                <span className="relative inline-block">
                   bullshit.
                   <svg
                     aria-hidden
                     viewBox="0 0 240 12"
-                    className="absolute left-0 right-0 -bottom-2 w-full"
+                    preserveAspectRatio="none"
+                    className="absolute left-0 right-0 -bottom-1 w-full h-[0.18em]"
                   >
                     <path
                       d="M2 8 C 60 2, 120 12, 238 4"
