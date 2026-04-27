@@ -1,7 +1,0 @@
-{
-  "tool_name": "Bash",
-  "tool_input_preview": "{\"command\":\"railway status 2>&1; echo \\\"---\\\"; railway list 2>&1 | head -20; echo \\\"---\\\"; ls .railway* 2>&1; cat .railway/config.json 2>/dev/null; cat railway.json 2>/dev/null; cat railway.toml 2>/de...",
-  "error": "Exit code 1\nProject: training-coach-demo\nEnvironment: production\nService: training-coach-demo\n---\n\nCo2pro\n  VE Simulator\n  document-sharing-portal\n  ELOverblik\n\nCo2pro\n  VE Simulator\n  document-sharing-portal\n  ELOverblik\n\nwesolvex's Projects\n  training-coach-demo\n  mhpk.dk\n  WeSolveX Portal\n  WeSolveX Hjemmeside\n  DocumentPortal\n  MitDHPU\n  MHPK Tandem\n\n---\nls: cannot access '.railway*': No such file or directory",
-  "timestamp": "2026-04-27T11:51:31.293Z",
-  "retry_count": 1
-}
