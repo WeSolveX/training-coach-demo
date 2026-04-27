@@ -1,65 +1,147 @@
-import Image from "next/image";
+import Link from "next/link";
+import Hero from "@/components/Hero";
+import FeatureGrid, { Feature } from "@/components/FeatureGrid";
+import CTABanner from "@/components/CTABanner";
+import { plans } from "@/lib/plans";
+import {
+  Dumbbell,
+  CalendarCheck,
+  PhoneCall,
+  ArrowRight,
+} from "lucide-react";
 
-export default function Home() {
+const features: Feature[] = [
+  {
+    title: "Real loading, real progression",
+    body: "Periodized programming with sets, reps, and intensity targets you can actually follow week to week.",
+    icon: Dumbbell,
+  },
+  {
+    title: "Weekly check-ins",
+    body: "We review what you trained, what felt heavy, and what to adjust. No autopilot, no ghosting.",
+    icon: CalendarCheck,
+  },
+  {
+    title: "A coach who picks up the phone",
+    body: "When something goes sideways at the gym, you have a human you can reach. Not a chatbot.",
+    icon: PhoneCall,
+  },
+];
+
+export default function HomePage() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <>
+      <Hero />
+
+      <section className="py-20 md:py-28">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-2xl">
+            <p className="text-sm font-medium uppercase tracking-widest text-amber-700">
+              The approach
+            </p>
+            <h2 className="mt-3 font-display text-4xl md:text-5xl text-stone-900">
+              Built for women. Built for power.
+            </h2>
+            <p className="mt-5 text-lg text-stone-700">
+              Strength training that respects your time, your body, and your
+              goals.
+            </p>
+          </div>
+
+          <div className="mt-12">
+            <FeatureGrid features={features} />
+          </div>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
+      </section>
+
+      <section className="py-20 md:py-28 bg-white border-y border-stone-200">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid gap-10 md:grid-cols-2 md:items-end">
+            <div>
+              <p className="text-sm font-medium uppercase tracking-widest text-amber-700">
+                Three plans
+              </p>
+              <h2 className="mt-3 font-display text-4xl md:text-5xl text-stone-900">
+                Beginners welcome. Advanced lifters too.
+              </h2>
+              <p className="mt-5 text-lg text-stone-700 max-w-xl">
+                Three plans, one philosophy: the bar gets heavier when
+                you&apos;re ready, not before.
+              </p>
+            </div>
+            <div className="md:justify-self-end">
+              <Link
+                href="/plans"
+                className="inline-flex items-center gap-2 text-amber-700 font-medium hover:text-stone-900 transition-colors"
+              >
+                Compare the plans
+                <ArrowRight className="w-4 h-4" />
+              </Link>
+            </div>
+          </div>
+
+          <div className="mt-12 grid gap-6 md:grid-cols-3">
+            {plans.map((p) => (
+              <Link
+                key={p.slug}
+                href="/plans"
+                className="group rounded-2xl border border-stone-200 bg-stone-50 p-8 hover:border-amber-700 transition-colors"
+              >
+                <p className="text-xs uppercase tracking-widest text-amber-700">
+                  {p.weeks}
+                </p>
+                <h3 className="mt-2 font-display text-2xl text-stone-900">
+                  {p.name}
+                </h3>
+                <p className="mt-3 text-stone-700 text-sm">{p.tagline}</p>
+                <span className="mt-6 inline-flex items-center gap-1 text-sm font-medium text-stone-900 group-hover:text-amber-700">
+                  See details
+                  <ArrowRight className="w-4 h-4" />
+                </span>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-20 md:py-28">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 grid gap-12 lg:grid-cols-2 lg:items-center">
+          <div className="aspect-[4/3] overflow-hidden rounded-3xl border border-stone-200 bg-stone-200">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=1200&q=80"
+              alt="Coach correcting a barbell setup"
+              className="w-full h-full object-cover"
+              loading="lazy"
             />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+          </div>
+          <div>
+            <p className="text-sm font-medium uppercase tracking-widest text-amber-700">
+              The method
+            </p>
+            <h2 className="mt-3 font-display text-4xl md:text-5xl text-stone-900">
+              Heavy is the goal. Kind is the method.
+            </h2>
+            <p className="mt-5 text-lg text-stone-700">
+              Hard training, calm coaching. No screaming, no shame, no
+              shortcuts.
+            </p>
+            <Link
+              href="/coach"
+              className="mt-8 inline-flex items-center gap-2 rounded-full border border-stone-900 text-stone-900 px-6 py-3 text-sm font-medium hover:bg-stone-900 hover:text-stone-100 transition-colors"
+            >
+              How structure coaching works
+              <ArrowRight className="w-4 h-4" />
+            </Link>
+          </div>
         </div>
-      </main>
-    </div>
+      </section>
+
+      <CTABanner
+        title="Ready to lift heavy?"
+        body="Tell us where you are, and we'll point you at the plan that fits. Real programming, real coaching, no nonsense."
+        ctaLabel="Get in touch"
+      />
+    </>
   );
 }
